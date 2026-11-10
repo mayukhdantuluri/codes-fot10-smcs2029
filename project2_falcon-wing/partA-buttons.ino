@@ -10,7 +10,10 @@ Last Edited on 2026-11-09, 20:00 UTC-5
 
 #include <Servo.h>
 
-const int BUTTON_PIN = 2; 
+// The button being used is a SunFounder Button Module 2.0
+const int BUTTON_PIN = 2;
+
+// The motor being used is a Springrc SM-S3317SR (Servo motor that only understands speed and direction, not angles)
 const int SERVO_PIN = 9;  
 
 Servo myServo;
@@ -18,8 +21,7 @@ Servo myServo;
 int lastButtonState = HIGH; 
 bool isOpen = false; // Tracks if the mechanism is "open" or "closed"
 
-// Calibration Time
-// Number (in milliseconds) to be adjusted until the motor turns exactly as far as needed
+// Calibration time (in milliseconds) that is to be adjusted until the motor turns exactly as far as needed
 const int RUN_TIME = 1200; 
 
 void setup() {
