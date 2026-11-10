@@ -1,22 +1,19 @@
 /*
 SMCS 2029 | Grade 10 | Foundations of Technology A
-Falcon Wing
+Falcon Wing (Buttons)
 
 Block X | Group 3
 Group Members: Mayukh Dantuluri, Edward Hou, Dez Murdock
 
-Last Edited on 2026-11-09, 20:00 UTC-5
+Last Edited on 2026-11-10, 09:40 UTC-5
 */
 
-#include <Servo.h>
+#include <Servo.h> // Include the Servo class
+Servo myServo; // myServo is the variable from the Servo class
 
-// The button being used is a SunFounder Button Module 2.0
-const int BUTTON_PIN = 2;
-
-// The motor being used is a Springrc SM-S3317SR (Servo motor that only understands speed and direction, not angles)
-const int SERVO_PIN = 9;  
-
-Servo myServo;
+// Important Constants
+const int BUTTON_PIN = 2; // The button being used is a SunFounder Button Module 2.0
+const int SERVO_PIN = 9; // The motor being used is a Springrc SM-S3317SR (Reminder that it only understands speed and direction, not angles)
 
 int lastButtonState = HIGH; 
 bool isOpen = false; // Tracks if the mechanism is "open" or "closed"
@@ -27,7 +24,7 @@ const int RUN_TIME = 1200;
 void setup() {
   pinMode(BUTTON_PIN, INPUT_PULLUP);
   myServo.attach(SERVO_PIN);
-  myServo.write(90); // Ensure the motor starts completely stopped
+  myServo.write(90); // Motor should start completely stopped
 }
 
 void loop() {
