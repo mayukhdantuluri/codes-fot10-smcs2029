@@ -5,7 +5,7 @@ Falcon Wing - Buttons
 Block X | Group 3
 Group Members: Mayukh Dantuluri, Edward Hou, Dez Murdock
 
-Last Edited on 2026-11-13, 17:40 UTC-5
+Last Edited on 2026-11-20, 14:00 UTC-5
 */
 
 // Summon the Servo class to use the Servo features
@@ -17,11 +17,11 @@ const int BUTTON_PIN = 2; // Yellow wire from SunFounder Button Module 2.0 into 
 const int SERVO_PIN = 9; // Green wire from SpringRC SM-S3317SR Servo Motor into D9, Blue wire into 5V, Black wire into GND
 
 // Servo signal values for SpringRC SM-S3317SR (It doesn't understand angles, just uses direction and speed (0-180))
-const int SPEED_STOP = 87; // 90 is supposed to be the default stop value but some motors could have a off-center value
-const int SPEED_CONSTANT = 15; // Constant speed to add or subtract from stopping position
-const int SPEED_CW = (SPEED_STOP + SPEED_CONSTANT); // Speed to close hand, use numbers higher than SPEED_STOP for clockwise rotation
-const int SPEED_CCW = (SPEED_STOP - SPEED_CONSTANT); // Speed to open hand, use numbers lower than SPEED_STOP for counterclockwise rotation
-const int ROTATE_DURATION = 500; // Amount of time (ms) it rotates in either direction
+const int SPEED_STOP = 87; // 90 is supposed to be the default stop value but some motors could have an off-center value
+const int SPEED_CONSTANT = 10; // Constant speed to add or subtract from stopping position
+const int SPEED_0 = (SPEED_STOP - SPEED_CONSTANT); // Speed to open hand, use numbers lower than SPEED_STOP for counterclockwise rotation
+const int SPEED_1 = (SPEED_STOP + SPEED_CONSTANT); // Speed to close hand, use numbers higher than SPEED_STOP for clockwise rotation
+const int ROTATE_DURATION = 250; // Amount of time (ms) it rotates in either direction
 
 // Boolean variables to store the toggle state
 bool buttonToggled = false;
@@ -46,12 +46,12 @@ void loop() {
     
     if (buttonToggled) {
       // 1 = Close hand, rotate clockwise
-      myServo.write(SPEED_CW);
+      myServo.write(SPEED_1);
       delay(ROTATE_DURATION);
       myServo.write(SPEED_STOP);
     } else {
       // 0 = Open hand, rotate counter-clockwise
-      myServo.write(SPEED_CCW);
+      myServo.write(SPEED_0);
       delay(ROTATE_DURATION);
       myServo.write(SPEED_STOP);
     }
