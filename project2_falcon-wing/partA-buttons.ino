@@ -5,7 +5,7 @@ Falcon Wing - Buttons
 Block X | Group 3
 Group Members: Mayukh Dantuluri, Edward Hou, Dez Murdock
 
-Last Edited on 2026-11-20, 14:00 UTC-5
+Last Edited on 2026-11-21, 08:10 UTC-5
 */
 
 // Summon the Servo class to use the Servo features
@@ -24,7 +24,7 @@ const int SPEED_1 = (SPEED_STOP + SPEED_CONSTANT); // Speed to close hand, use n
 const int ROTATE_DURATION = 250; // Amount of time (ms) it rotates in either direction
 
 // Boolean variables to store the toggle state
-bool buttonToggled = false;
+bool buttonToggled = false; // Start with an open hand
 bool lastReading = HIGH;
 
 void setup() {
