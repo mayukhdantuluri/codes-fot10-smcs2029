@@ -1,6 +1,6 @@
 /*
 SMCS 2029 | Grade 10 | Foundations of Technology A
-Falcon Wing - Buttons
+Falcon Wing - Myoware Sensors
 
 Block X | Group 3
 Group Members: Mayukh Dantuluri, Edward Hou, Dez Murdock
