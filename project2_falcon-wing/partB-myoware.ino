@@ -16,11 +16,11 @@ Servo myServo;
 const int MYOWARE_PIN = A0; // Connect MyoWare 'ENV' (or SIG) pin to A0
 const int SERVO_PIN = 9; // Green wire from SpringRC SM-S3317SR Servo Motor into D9, Blue wire into 5V, Black wire into GND
 
-// Servo signal values for SpringRC SM-S3317SR
-const int SPEED_STOP = 87; 
-const int SPEED_CONSTANT = 10; 
-const int SPEED_0 = (SPEED_STOP - SPEED_CONSTANT); // Open hand (counter-clockwise)
-const int SPEED_1 = (SPEED_STOP + SPEED_CONSTANT); // Close hand (clockwise)
+// Servo signal values for SpringRC SM-S3317SR (It doesn't understand angles, just uses direction and speed (0-180))
+const int SPEED_STOP = 87; // 90 is supposed to be the default stop value but some motors could have an off-center value
+const int SPEED_CONSTANT = 10; // Constant speed to add or subtract from stopping position
+const int SPEED_0 = (SPEED_STOP - SPEED_CONSTANT); // Speed to open hand, use numbers lower than SPEED_STOP for counterclockwise rotation
+const int SPEED_1 = (SPEED_STOP + SPEED_CONSTANT); // Speed to close hand, use numbers higher than SPEED_STOP for clockwise rotation
 const int ROTATE_DURATION = 250; // Amount of time (ms) it rotates in either direction
 
 // MyoWare Threshold & State Variables
